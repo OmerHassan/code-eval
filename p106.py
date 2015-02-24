@@ -35,7 +35,7 @@ def getRomanDigit(digit, position):
 
 	Parameters
 	----------
-		digit:int
+		digit:str
 		position:int
 			`0` for units, `1` for tens, `2` for hundreds, and so on
 
