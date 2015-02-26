@@ -2,9 +2,7 @@ import sys
 
 inputFile = open(sys.argv[1])
 numRequiredLines = int(inputFile.readline())
-lines = []
-lengthIndexPairs = []
-i = 0
+lengthLinePairs = []
 
 while True:
 	line = inputFile.readline().rstrip()
@@ -12,9 +10,10 @@ while True:
 	if not line:
 		break
 
-	lines.append(line)
-	lengthIndexPairs.append((len(line), i))
-	i += 1
+	lengthLinePairs.append((len(line), line))
 
-for lengthIndexPair in sorted(lengthIndexPairs, reverse = True)[:numRequiredLines]:
-	print(lines[lengthIndexPair[1]])
+i = 0
+lengthLinePairs = sorted(lengthLinePairs, reverse = True)
+
+for i in range(numRequiredLines):
+	print(lengthLinePairs[i][1])
