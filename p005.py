@@ -9,12 +9,8 @@ def printRepetition(elements):
 
 	for repetitionLength in range(1, int(numElements / 2) + 1):
 		for repetitionStartIndex in range(numElements - 2 * repetitionLength + 1):
-			for i in range(repetitionLength):
-				testElementIndex = repetitionStartIndex + i
-				
-				if elements[testElementIndex] != elements[testElementIndex + repetitionLength]:
-					break
-			else:
+			secondOccurrenceStartIndex = repetitionStartIndex + repetitionLength
+			if elements[repetitionStartIndex:secondOccurrenceStartIndex] == elements[secondOccurrenceStartIndex:secondOccurrenceStartIndex + repetitionLength]:
 				print(' '.join(elements[repetitionStartIndex:repetitionStartIndex + repetitionLength]))
 				return
 
