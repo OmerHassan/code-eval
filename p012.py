@@ -3,9 +3,7 @@ import sys
 def printFirstNonRepeatingCharacter(string):
 	checkedCharacters = {}
 
-	for characterIndex in range(len(string)):
-		character = string[characterIndex]
-
+	for characterIndex, character in enumerate(string):
 		if character in checkedCharacters:
 			continue
 
